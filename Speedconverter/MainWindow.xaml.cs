@@ -19,7 +19,7 @@ namespace Speedconverter
             ClearControls();
         }
 
-        Regex regex = new Regex(@"^\d+[,|\.]{0,1}\d{0,}$");
+        readonly Regex regex = MyRegex();
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         { // makes sure that only numbers are inserted into the input boxes
@@ -35,7 +35,7 @@ namespace Speedconverter
 
         public double Speed = 0;
 
-        public DataTable dtSpeed = new DataTable();
+        public DataTable dtSpeed = new();
         public void BindSpeeds()
         {
             dtSpeed.Columns.Add("Text");
@@ -97,5 +97,8 @@ namespace Speedconverter
             Speed_Output.Content = ""; //Text should probably be changed to Context
             Speed_Input.Focus();
         }
+
+        [GeneratedRegex("^\\d+[,|\\.]{0,1}\\d{0,}$")]
+        private static partial Regex MyRegex();
     }
 }

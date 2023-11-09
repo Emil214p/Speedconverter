@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Data;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Speedconverter
 {
@@ -14,6 +17,20 @@ namespace Speedconverter
             InitializeComponent();
             BindSpeeds();
             ClearControls();
+        }
+
+        Regex regex = new Regex(@"^\d+[,|\.]{0,1}\d{0,}$");
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        { // makes sure that only numbers are inserted into the input boxes
+
+            var text = ((TextBox)sender).Text + e.Text;
+
+            if (!regex.IsMatch(text))
+            {
+                // if not match deny new char
+                e.Handled = true;
+            }
         }
 
         public double Speed = 0;

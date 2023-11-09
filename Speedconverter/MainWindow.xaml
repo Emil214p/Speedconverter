@@ -1,0 +1,17 @@
+﻿<Window x:Class="Speedconverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Speedconverter"
+        mc:Ignorable="d"
+        Title="Speed converter" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" Icon="/speedometer.ico">
+    <Grid Width="210" Height="180">
+        <Button Content="Convert" Name="Convert" Click="Convert_Click" HorizontalAlignment="Left" Margin="15,82,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button Content="Clear" Name="Clear" Click="Clear_Click"  HorizontalAlignment="Left" Margin="146,82,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <ComboBox HorizontalAlignment="Center" MaxDropDownHeight="150" Name="Speed_Type" Margin="0,44,0,0" VerticalAlignment="Top" Width="180" FontSize="20"/>
+        <TextBox HorizontalAlignment="Center" Name="Speed_Input" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontSize="20"/>
+        <Label BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Center" Name="Speed_Output" Margin="0,118,0,0" VerticalAlignment="Top" Width="180" FontSize="20" Height="52"/>
+
+    </Grid>
+</Window>
